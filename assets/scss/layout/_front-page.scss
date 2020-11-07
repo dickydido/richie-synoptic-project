@@ -1,0 +1,35 @@
+section.product-section {
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        .product {
+            @media only screen and (min-width: 380px) {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            @media only screen and (min-width: 560px) {
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+            }
+            @media only screen and (min-width: 768px) {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+            @media only screen and (min-width: 1024px) {
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+            .product-card {
+                background: pink;
+                padding: 10px;
+                margin: 10px;
+                text-align: center;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
