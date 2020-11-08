@@ -19,4 +19,8 @@ $(document).ready(function() {
         });
     }
 
+    if ($('.redirect').length != 0) {
+        window.location.href = "index.php";
+    }
+
 });
