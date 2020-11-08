@@ -30,6 +30,19 @@
 
             // Calculate total after Postage
             $total_price = $subtotal_price + $postage;
+
+            // Check if gift options were submitted.
+            if (isset($_POST['gift-options'])) {
+                $_SESSION['gift-options'] = array(
+                    'gift-message'  => $_POST['message'],
+                    'gift-wrap'     => $_POST['gift-wrap']
+                );
+            }
+
+            if (isset($_POST['clear-gift'])) {
+                unset($_SESSION['gift-options']);
+                echo 'div class="redirect"></div>';
+            }
         ?>
         <table class="basket-table">
             <thead>
@@ -70,24 +83,41 @@
             </tfoot>
         </table>
 
-        <div class="basket-buttons">
-            <form action="basket.php?action=clear" method="post">
-                <input type="submit" value="Clear Basket" name="clear" />
-            </form>
-            <?php if ($total_weight < 40) : ?>
-                <?php
-                    $needed_weight = number_format((40 - $total_weight), 1);
-                ?>
-                <button disabled="true" class="checkout">Checkout</button>
-                <p class="error">Please note: The total weight of your basket is <strong><?=$needed_weight?>g</strong> below the minimum requirement of <strong>40.0g</strong>.</p>
-            <?php else : ?>
-                <button class="checkout">Checkout</button>
-            <?php endif; ?>
 
-            <?php else : ?>
-                <h2>Basket empty.</h2>
-            <?php endif; ?>
+        <form action="basket.php?action=clear" method="post">
+            <input type="submit" value="Clear Basket" name="clear" />
+        </form>
+        <div class="gift-options">
+            <h3>Gift Options</h3>
+        <?php if (!isset($_SESSION['gift-options'])) : ?>
+            <form action="basket.php" method="post">
+                <label for="message">Special Message</label>
+                <textarea rows="3" name="message"></textarea>
+                <label for="gift-wrap">Gift wrap?</label>
+                <input type="checkbox" name="gift-wrap" />
+                <input type="submit" name="gift-options" value="Submit Gift Options" />
+            </form>
+        <?php else : ?>
+            <p>Special Message: <?=$_SESSION['gift-options']['gift-message']?></p>
+            <p>Gift wrapped? <?=$_SESSION['gift-options']['gift-wrap'] ? 'Yes' : 'No' ?></p>
+            <form action="basket.php?action=clear-gift-options" method="post">
+                <input type="submit" name="clear-gift" value="Remove Gift Options" />
+            </form>
+        <?php endif; ?>
         </div>
+        <?php if ($total_weight < 40) : ?>
+            <?php
+                $needed_weight = number_format((40 - $total_weight), 1);
+            ?>
+            <button disabled="true" class="checkout">Checkout</button>
+            <p class="error">Please note: The total weight of your basket is <strong><?=$needed_weight?>g</strong> below the minimum order requirement of <strong>40.0g</strong>.</p>
+        <?php else : ?>
+            <button class="checkout">Checkout</button>
+        <?php endif; ?>
+
+    <?php else : ?>
+        <h2>Basket empty.</h2>
+    <?php endif; ?>
 
 
 <?php include 'footer.php'; ?>
