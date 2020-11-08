@@ -2,8 +2,6 @@ section.product-section {
     .products {
         display: flex;
         flex-wrap: wrap;
-        max-width: 1200px;
-        margin: 0 auto;
         .product {
             @media only screen and (min-width: 380px) {
                 flex: 0 0 50%;

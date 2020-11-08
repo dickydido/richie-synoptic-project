@@ -28,27 +28,30 @@
 ?>
 
 <section class="product-section">
-    <div class="products">
-        <?php foreach ($products as $product) : ?>
-            <?php $price = number_format($product['PricePerGram'] * $product['Weight'], 2); ?>
-            <div class="product">
-                <div class="product-card">
-                    <img src="assets/images/<?=$product['Image']?>" />
-                    <h4><?=$product['Name']?></h4>
-                    <p class="weight" data-weight="<?=$product['Weight']?>">Weight: <span><?=number_format($product['Weight'], 1)?></span>g</p>
-                    <p class="price" data-price="<?=$price?>">Price: £<span><?=$price?></span></p>
-                    <form action="index.php?action=add&id=<?=$product['ID']?>" method="post" data->
-                        <input type="hidden" name="hidden-name" class="hidden-name" value="<?=$product['Name']?>" />
-                        <input type="hidden" name="hidden-weight" class="hidden-weight" value="<?=number_format($product['Weight'], 1)?>" />
-                        <input type="hidden" name="hidden-price" class="hidden-price" value="<?=$price?>" />
-                        <input type="hidden" name="hidden-image" class="hidden-image" value="<?=$product['Image']?>" />
-                        <label for="qty">Qty</label>
-                        <input type="number" name="qty" class="qty" min="1" value="1" />
-                        <input type="submit" name="add" value="Add to Basket" />
-                    </form>
+    <div class="container">
+        <h2>Browse our selection...</h2>
+        <div class="products">
+            <?php foreach ($products as $product) : ?>
+                <?php $price = number_format($product['PricePerGram'] * $product['Weight'], 2); ?>
+                <div class="product">
+                    <div class="product-card">
+                        <img src="assets/images/<?=$product['Image']?>" />
+                        <h4><?=$product['Name']?></h4>
+                        <p class="weight" data-weight="<?=$product['Weight']?>">Weight: <span><?=number_format($product['Weight'], 1)?></span>g</p>
+                        <p class="price" data-price="<?=$price?>">Price: £<span><?=$price?></span></p>
+                        <form action="index.php?action=add&id=<?=$product['ID']?>" method="post" data->
+                            <input type="hidden" name="hidden-name" class="hidden-name" value="<?=$product['Name']?>" />
+                            <input type="hidden" name="hidden-weight" class="hidden-weight" value="<?=number_format($product['Weight'], 1)?>" />
+                            <input type="hidden" name="hidden-price" class="hidden-price" value="<?=$price?>" />
+                            <input type="hidden" name="hidden-image" class="hidden-image" value="<?=$product['Image']?>" />
+                            <label for="qty">Qty</label>
+                            <input type="number" name="qty" class="qty" min="1" value="1" />
+                            <input type="submit" name="add" value="Add to Basket" />
+                        </form>
+                    </div>
                 </div>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
     </div>
 </section>
 

@@ -59,12 +59,21 @@
 <head>
     <title>Richie Synoptic Project</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <header class="<?=$redirect ? ' redirect' : ''?>">
-        <a href="index.php" class="logo">Sweet Shop</a>
-        <a href="basket.php" class="basket">Basket: <?=$_SESSION['basket'] ? count($_SESSION['basket']) : 0 ?></a>
+        <div class="container">
+            <div class="header-content">
+                <h1>
+                    <a href="index.php" class="logo">Sweet Shop</a>
+                </h1>
+                <a href="basket.php" class="basket"><i class="fas fa-shopping-basket"></i> Basket (<?=$_SESSION['basket'] ? count($_SESSION['basket']) : 0 ?>)</a>
+            </div>
+        </div>
     </header>
     <main>
         <?php if (!$redirect && isset($_SESSION['item-added'])) : ?>
