@@ -41,7 +41,7 @@
 
             if (isset($_POST['clear-gift'])) {
                 unset($_SESSION['gift-options']);
-                echo 'div class="redirect"></div>';
+                echo '<div class="redirect"></div>';
             }
         ?>
         <table class="basket-table">
