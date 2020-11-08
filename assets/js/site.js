@@ -20,7 +20,11 @@ $(document).ready(function() {
     }
 
     if ($('.redirect').length != 0) {
-        window.location.href = "index.php";
+        window.location.href = $(location).attr("href").split('?')[0];
     }
+
+    $('.checkout').click(function() {
+        alert("Checkout doesn't exist yet.");
+    });
 
 });

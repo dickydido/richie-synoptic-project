@@ -27,7 +27,7 @@
     mysqli_close($link);
 ?>
 
-<section class="product-section<?=$redirect ? ' redirect' : ''?>">
+<section class="product-section">
     <div class="products">
         <?php foreach ($products as $product) : ?>
             <?php $price = number_format($product['PricePerGram'] * $product['Weight'], 2); ?>

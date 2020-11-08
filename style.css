@@ -1,5 +1,8 @@
-.hidden {
-  display: none !important; }
+.error {
+  color: red; }
+
+.success {
+  color: green; }
 
 header {
   height: 120px; }
