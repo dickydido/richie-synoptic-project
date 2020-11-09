@@ -1,0 +1,63 @@
+.basket-table {
+    max-width: 630px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #EEE;
+    form {
+        text-align: right;
+    }
+}
+table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+    thead {
+        border-bottom: 1px solid #f95d76;
+    }
+    th, td {
+        padding: 10px;
+    }
+    img {
+        max-width: 100px;
+    }
+    tfoot {
+        border-top: 1px solid #f95d76;
+        border-bottom: 1px solid #f95d76;
+    }
+}
+
+.gift-options {
+    max-width: 630px;
+    margin: 40px auto;
+    background: #6bc0f6;
+    padding: 20px;
+    color: white;
+    h3, p {
+        color: white;
+    }
+    .description {
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+    .options {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        .option-container {
+            flex: 0 0 50%;
+            max-width: 50%;
+            label, textarea, input {
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+button.checkout {
+    font-size: 22px;
+    &:disabled {
+        background: #DDD;
+        border-color: #DDD
+    }
+}

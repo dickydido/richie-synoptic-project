@@ -3,17 +3,85 @@ body {
     font-family: 'Open Sans';
 }
 
+main {
+    min-height: calc(100vh - 550px);
+}
+
 a {
     text-decoration: none;
+    transition: all .3s ease;
+    &:hover {
+        color: #f4768a;
+    }
 }
 
 main {
     text-align: center;
 }
 
+h2, h3, h4, h5, p, a, li {
+    color: #222;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    display: block;
+}
+
 .container {
-    max-width: 1200px;
     margin: 0 auto;
+    @media only screen and (min-width: 576px) {
+        max-width: 540px;
+    }
+    @media only screen and (min-width: 768px) {
+        max-width: 720px;
+    }
+    @media only screen and (min-width: 992px) {
+        max-width: 960px;
+    }
+    @media only screen and (min-width: 1200px) {
+        max-width: 1140px;
+    }
+    @media only screen and (min-width: 1400px) {
+        max-width: 1200px;
+    }
+}
+
+section {
+    padding: 40px 0;
+}
+
+button, .btn {
+    font-size: 18px;
+    margin-top: 15px;
+    border: 1px solid #f4768a;
+    background: #f4768a;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    &:hover {
+        background: #f95d76;
+    }
+}
+
+.btn-clear {
+    background: #ff2c2c;
+    &:hover {
+        background: #d11b1b;
+    }
+}
+
+.add-to-basket {
+    width: 100%;
+}
+
+.section-title {
+    font-weight: 400;
+    color: #f4768a;
 }
 
 .error {
@@ -21,5 +89,12 @@ main {
 }
 
 .success {
-    color: green;
+    p {
+        color: green;
+    }
+}
+
+.logo {
+    font-family: 'Lobster', 'Open Sans';
+    font-size: 40px;
 }

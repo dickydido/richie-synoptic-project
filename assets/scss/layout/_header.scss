@@ -8,9 +8,6 @@ header {
         justify-content: space-between;
         margin: 0 10px;
         height: 100%;
-        h1 {
-            font-family: 'Lobster', 'Open Sans';
-        }
         a {
             color: white;
             &.basket {
@@ -18,6 +15,11 @@ header {
                 background: white;
                 padding: 10px 20px;
                 border-radius: 3px;
+                border: 1px solid white;
+                &:hover {
+                    background: transparent;
+                    color: white;
+                }
             }
         }
     }

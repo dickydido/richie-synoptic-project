@@ -3,29 +3,43 @@ section.product-section {
         display: flex;
         flex-wrap: wrap;
         .product {
-            @media only screen and (min-width: 380px) {
+            max-width: 290px;
+            margin: 0 auto;
+            @media only screen and (min-width: 420px) {
                 flex: 0 0 50%;
                 max-width: 50%;
+                margin: 0;
             }
-            @media only screen and (min-width: 560px) {
+            @media only screen and (min-width: 768px) {
                 flex: 0 0 33.33%;
                 max-width: 33.33%;
             }
-            @media only screen and (min-width: 768px) {
+            @media only screen and (min-width: 992px) {
                 flex: 0 0 25%;
                 max-width: 25%;
             }
-            @media only screen and (min-width: 1024px) {
+            @media only screen and (min-width: 1200px) {
                 flex: 0 0 20%;
                 max-width: 20%;
             }
             .product-card {
-                background: pink;
                 padding: 10px;
                 margin: 10px;
                 text-align: center;
+                border: 5px solid #eee;
                 img {
                     width: 100%;
+                }
+                .weight {
+                    font-size: 14px;
+                }
+                .price {
+                    color: #f4768a;
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+                .qty {
+                    max-width: 50px;
                 }
             }
         }
