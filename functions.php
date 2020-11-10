@@ -1,6 +1,6 @@
 <?php
 
-// Print objects & arrays in a more readable format.
+// Prints objects & arrays in a more readable format.
 function print_nice($var, $die = false)
 {
     echo "<pre>";

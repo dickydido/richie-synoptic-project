@@ -9,7 +9,7 @@
     // Display basket info if there is any.
     if (isset($_SESSION['basket'])) : ?>
         <?php
-            // Calculate basket subtotal
+            // Calculate basket subtotal.
             $basket_weights = array();
             $basket_prices  = array();
 
@@ -32,10 +32,9 @@
                 $postage = 2.5;
             }
 
-            // Calculate total after Postage
-            $total_price = $subtotal_price + $postage;
+            $total_price = $subtotal_price + $postage; // Calculate total after Postage
 
-            // Check if gift options were submitted.
+            // Check if gift options were submitted & update.
             if (isset($_POST['gift-options'])) {
                 $_SESSION['gift-options'] = array(
                     'gift-message'  => $_POST['message'],
@@ -43,11 +42,19 @@
                 );
             }
 
+            // Clear gift options button function.
             if (isset($_POST['clear-gift'])) {
                 unset($_SESSION['gift-options']);
                 echo '<div class="redirect"></div>';
             }
+
+            // Clear basket button function.
+            if (isset($_POST['clear'])) {
+                unset($_SESSION['basket']);
+                echo '<div class="redirect"></div>';
+            }
         ?>
+
         <div class="basket-table">
             <h2>Your Basket</h2>
             <table>
@@ -96,7 +103,10 @@
 
         <div class="gift-options">
             <h3>Gift Options</h3>
+
+        <!-- Check if gift options exist & display. -->
         <?php if (!isset($_SESSION['gift-options'])) : ?>
+
             <p class="description">Sending to someone special? Why not gift wrap it and send them a personal message?</p>
             <form action="basket.php" method="post">
                 <div class="options">
@@ -111,14 +121,20 @@
                 </div>
                 <input type="submit" name="gift-options" class="btn" value="Submit Gift Options" />
             </form>
+
         <?php else : ?>
+
             <p>Special Message: <?=$_SESSION['gift-options']['gift-message']?></p>
             <p>Gift wrapped? <?=$_SESSION['gift-options']['gift-wrap'] ? 'Yes' : 'No' ?></p>
             <form action="basket.php?action=clear-gift-options" method="post">
                 <input type="submit" name="clear-gift" class="btn btn-clear" value="Remove Gift Options" />
             </form>
+
         <?php endif; ?>
+
         </div>
+
+        <!-- Display error message if minimum order weight not reached. -->
         <?php if ($total_weight < 40) : ?>
             <?php
                 $needed_weight = number_format((40 - $total_weight), 1);
