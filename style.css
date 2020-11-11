@@ -11,7 +11,7 @@ a {
   -o-transition: all .3s ease;
   transition: all .3s ease; }
   a:hover {
-    color: #f4768a; }
+    color: #82176d; }
 
 main {
   text-align: center; }
@@ -24,6 +24,9 @@ ul {
 
 li {
   display: block; }
+
+.hidden {
+  display: none; }
 
 .container {
   margin: 0 auto; }
@@ -49,17 +52,17 @@ section {
 button, .btn {
   font-size: 18px;
   margin-top: 15px;
-  border: 1px solid #f4768a;
-  background: #f4768a;
+  border: 1px solid #82176d;
+  background: #82176d;
   color: white;
   padding: 5px 10px;
   border-radius: 3px;
   cursor: pointer; }
   button:hover, .btn:hover {
-    background: #f95d76; }
+    background: #630a52; }
 
 .btn-clear {
-  background: #ff2c2c; }
+  background: #D60000; }
   .btn-clear:hover {
     background: #d11b1b; }
 
@@ -68,10 +71,10 @@ button, .btn {
 
 .section-title {
   font-weight: 400;
-  color: #f4768a; }
+  color: #82176d; }
 
 .error {
-  color: red; }
+  color: #D60000; }
 
 .success p {
   color: green; }
@@ -82,7 +85,7 @@ button, .btn {
 
 header {
   height: 100px;
-  background: #f4768a;
+  background: #F6606C;
   margin-bottom: 40px; }
   header .header-content {
     display: -webkit-box;
@@ -99,7 +102,7 @@ header {
     header .header-content a {
       color: white; }
       header .header-content a.basket {
-        color: #f4768a;
+        color: #82176d;
         background: white;
         padding: 10px 20px;
         border-radius: 3px;
@@ -152,7 +155,7 @@ section.product-section .products {
       section.product-section .products .product .product-card .weight {
         font-size: 14px; }
       section.product-section .products .product .product-card .price {
-        color: #f4768a;
+        color: #82176d;
         font-weight: 700;
         font-size: 18px; }
       section.product-section .products .product .product-card .qty {
@@ -177,10 +180,10 @@ footer {
     footer .footer-content .logo, footer .footer-content .contact, footer .footer-content .social-networks {
       padding: 20px 0; }
     footer .footer-content .logo {
-      color: #f4768a;
+      color: #82176d;
       display: block; }
     footer .footer-content a:hover {
-      color: #f4768a; }
+      color: #82176d; }
     footer .footer-content h4 {
       font-size: 22px;
       margin-top: 0;
@@ -195,7 +198,7 @@ footer {
 .copyright {
   padding: 10px 0;
   text-align: center;
-  background: #f4768a; }
+  background: #82176d; }
   .copyright p {
     margin: 0;
     color: white; }
@@ -226,7 +229,7 @@ table {
 .gift-options {
   max-width: 630px;
   margin: 40px auto;
-  background: #6bc0f6;
+  background: #0C6BA7;
   padding: 20px;
   color: white; }
   .gift-options h3, .gift-options p {

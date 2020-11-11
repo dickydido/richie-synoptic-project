@@ -70,7 +70,7 @@
                     <?php foreach($_SESSION['basket'] as $item) : ?>
                         <tr>
                             <td>
-                                <img src="assets/images/<?=$item['item_image']?>" />
+                                <img src="assets/images/<?=$item['item_image']?>" alt="<?=substr($item['item_image'], 0, -4)?>" />
                             </td>
                             <td><?=$item['item_name']?></td>
                             <td><?=$item['item_qty']?></td>
@@ -112,19 +112,22 @@
                 <div class="options">
                     <div class="option-container">
                         <label for="message">Special Message</label>
-                        <textarea rows="3" name="message"></textarea>
+                        <textarea rows="3" class="message-text" maxlength="50" name="message" id="message"></textarea>
                     </div>
                     <div class="option-container">
                         <label for="gift-wrap">Gift wrap?</label>
-                        <input type="checkbox" name="gift-wrap" />
+                        <input type="checkbox" name="gift-wrap" id="gift-wrap" />
                     </div>
                 </div>
+                <div class="error message-error hidden">Form incomplete.</div>
                 <input type="submit" name="gift-options" class="btn" value="Submit Gift Options" />
             </form>
 
         <?php else : ?>
 
-            <p>Special Message: <?=$_SESSION['gift-options']['gift-message']?></p>
+            <?php if ($_SESSION['gift-options']['gift-message']) : ?>
+                <p>Special Message: <?=$_SESSION['gift-options']['gift-message']?></p>
+            <?php endif; ?>
             <p>Gift wrapped? <?=$_SESSION['gift-options']['gift-wrap'] ? 'Yes' : 'No' ?></p>
             <form action="basket.php?action=clear-gift-options" method="post">
                 <input type="submit" name="clear-gift" class="btn btn-clear" value="Remove Gift Options" />

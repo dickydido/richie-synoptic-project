@@ -33,12 +33,13 @@
         <h2 class="section-title">Browse our selection...</h2>
         <div class="products">
 
+            <!-- Calculate full price and display each product. -->
             <?php foreach ($products as $product) : ?>
                 <?php $price = number_format($product['PricePerGram'] * $product['Weight'], 2); ?>
                 <div class="product">
                     <div class="product-card">
 
-                        <img src="assets/images/<?=$product['Image']?>" />
+                        <img src="assets/images/<?=$product['Image']?>" alt="<?=substr($product['Image'], 0, -4)?>" />
                         <h4><?=$product['Name']?></h4>
                         <p class="weight" data-weight="<?=$product['Weight']?>">Weight: <span><?=number_format($product['Weight'], 1)?></span>g</p>
                         <p class="price" data-price="<?=$price?>">£<span><?=$price?></span></p>
@@ -49,7 +50,7 @@
                             <input type="hidden" name="hidden-price" class="hidden-price" value="<?=$price?>" />
                             <input type="hidden" name="hidden-image" class="hidden-image" value="<?=$product['Image']?>" />
                             <label for="qty">Qty</label>
-                            <input type="number" name="qty" class="qty" min="1" value="1" />
+                            <input type="number" aria-label="Quantity" name="qty" class="qty" min="1" value="1" />
                             <input type="submit" class="add-to-basket btn" name="add" value="Add to Basket" />
                         </form>
 

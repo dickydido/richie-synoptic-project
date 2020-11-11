@@ -22,13 +22,13 @@
                 <h4>Follow us...</h4>
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </li>
                 </ul>
             </div>
